@@ -6,7 +6,7 @@ We can say that an algorithm is O(f(n)) if the number of the simple operations t
 
 #### f(n) - linear = ( f(n) = n )
 As the input of a function increases the runtime also increases
-#### f(n) - quadrantic = ( f(n) = n2 )
+#### f(n) - quadrantic = ( f(n) = n ^ 2 )
 As the input of a function increases the runtime squares as the input squares.
 #### f(n) - constant ( f(n) = 1 )
 As the input of a function increases the runtime does change it remains constant.
@@ -24,3 +24,12 @@ It takes the same amount of to do 3 + 3 and 3 + 1000000000. Whether it's +,/ , *
 The amount of time your computer takes to assign a variable x to 100, is the same amount of time to assign variable y to 1000000
 #### Accessing elements in an array (by index) or object (by key) is constant.
 #### In a loop, the complexity is the length of the loop times the complexity of whatever happens inside the loop.
+
+#### Time complexity - is the runtime of an algorithm as the input increases.
+
+#### Auxiliary space complexity -  is the space an algorithm takes not including the space taking up as the input increases.
+
+#### Important to note in space complexity
++ Most primitives (booleans, numbers, undefined, null) are constant.
++ Strings require O(n) space where (n is the length of the string).
++ Reference types are generally O(n). Example of reference types : arrays, objects. In array n is the length of the array while in object n is the number of the keys in the object.
