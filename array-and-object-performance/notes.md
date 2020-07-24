@@ -1,8 +1,8 @@
 ## Arrays and Object Performance analysis
 
 #### What is an Object
-This is
--
+This is a non-primitive data type and it's unordered.
+<br>
 In Objects there is no beginnning or end, thus it's unordered. You can add at the beginning, middle or end of an object. You just have to create a key and value and add it to the object.
 
 #### When do you use objects
