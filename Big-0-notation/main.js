@@ -31,7 +31,7 @@ let addNumbers = (n)=>{
     return total;
 }
 let test1 = performance.now();
-console.log(addNumbers(1000000000));
+console.log(addNumbers(1000000000));  // the n.o of seconds since the doc was open in the brower
 let test2 = performance.now();
 console.log(`It takes ${(test2 - test1) / 1000} seconds`);
 
@@ -204,4 +204,12 @@ function subtotals(array) {
     //O(n)
 }
 
+const printAllPairs = (n)=> {
+    for (var i = 0; i < n; i++) {
+      for (var j = 0; j < n; j++) {
+        console.log(i, j);
+      }
+    }
+}
 
+printAllPairs(10);

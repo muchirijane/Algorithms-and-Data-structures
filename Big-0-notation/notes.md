@@ -2,6 +2,11 @@
 #### This is a way to formalize fuzzy counting.
 #### This means it allows us to talk formally about how the runtime of the algorithm grows as the input grow. 
 #### To summarize this, it basically means that big O notation is the relaionship between the input(n) of a function and how it changes (incr) the runtime to get the results.
+#### What's the most important thing to  note
++ Is the code faster 
++ Does it occupy less space memory
++ Is it more readable?
+
 We can say that an algorithm is O(f(n)) if the number of the simple operations the computer has to do is eventually less than the times f(n), as n increases.
 
 #### f(n) - linear = ( f(n) = n )
@@ -13,9 +18,10 @@ As the input of a function increases the runtime does change it remains constant
 #### f(n) - could be something different.
 
 #### Smaller terms does not matter.
-#### O(n + 10) = O(n)
-#### O(1000 + 50) = O(n)
-#### O(n2 + 5n + 6) = O(n * n)/ O(n2)
+#### O(n + 10) =>  O(n)
+#### O(1000 + 50) => O(n)
+#### O(n2 + 5n + 6) => O(n * n)/ O(n2)
+#### O(n^2 + n^3) => O(n^3) 
 
 ### Important to note
 #### Arithmetic operations are constant.
