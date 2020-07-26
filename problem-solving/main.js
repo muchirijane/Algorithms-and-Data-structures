@@ -14,7 +14,7 @@ console.log(results);
 
 //     for(let i = 0; i < str.length; i++) {
 //         let char = str[i].toLowerCase();
-//         const regex = /[\w+]/;
+//         const regex = /[\w]+/;
 //         if(regex.test(char)) {
 //             if(result[char] > 0){
 //                 result[char]++;
@@ -34,20 +34,13 @@ console.log(results);
 let str = {};
 const countStr = (str) =>{
     let result = [...str];
-    const regex = /[\w+]/;
-    if(regex.test(result)) {
+    if(/[\w\s]+/.test(result)) {
         return result;
-    } 
+    }else{
+        return result = 'Write an alphanumeric string';
+    }
 }
 
 let string = countStr('Hello heeeeyyy 56789 gooooood');
 console.log(string);
 
-const double = (... nums) =>{
-    console.log(nums);
-   return nums.map(num => num * 2);
-}
-console.log(double(1,2,3,4,5,6,7,8,9,9));
-
-const people = ["Mercury", "John", "James", "George"];
-console.log(...people);
