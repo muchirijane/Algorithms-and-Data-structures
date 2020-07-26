@@ -31,14 +31,26 @@ console.log(results);
 // console.log(string);
 
 //solution two 
+// let str = {};
+// const countStr = (str) =>{
+//     let result = [...str];
+//     if(/[\w\s]+/.test(result)) {
+//         return result;
+//     }else{
+//         return result = 'Write an alphanumeric string';
+//     }
+// }
+
+// let string = countStr('Hello heeeeyyy 56789 gooooood');
+// console.log(string);
+
+//refactor solution two 
 let str = {};
 const countStr = (str) =>{
     let result = [...str];
-    if(/[\w\s]+/.test(result)) {
-        return result;
-    }else{
-        return result = 'Write an alphanumeric string';
-    }
+    let regex = /[\w\s]+/;
+    regex.test(result) ?  result : 'Write an alphanumeric string';
+    return result;
 }
 
 let string = countStr('Hello heeeeyyy 56789 gooooood');
