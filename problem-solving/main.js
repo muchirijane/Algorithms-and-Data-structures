@@ -59,6 +59,22 @@ console.log(results);
 
 //Problem solving patterns
 
+//question 3
 //Write a function called same, which accepts two arrays. The function should return the
 //array has it's corresponding value squared in the second array. The frequency of the values must be the same.
 
+//solution one
+const same = (doublenums, newArray) =>{
+    let arr1 = doublenums;
+    let arr2 =  doublenums.map(doublenum => doublenum ** 2);
+    console.log(arr1, arr2);
+    
+    console.log(newArray);
+    if (JSON.stringify(newArray) === JSON.stringify(arr2)){
+        return true;
+    }else{
+        return false
+    }
+}
+const result = same([1,2,1], [1 , 4, 1]);
+console.log(result);
