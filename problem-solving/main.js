@@ -1,9 +1,10 @@
+/*
 const addup = (a, b) => {
     return a + b;
 }
 const results = addup(2,6);
 console.log(results);
-
+*/
 // question 
 //write a function that takes a alphanumeric string and converts it into separate individual characters
 // output: can take any numbers or any text whether uppercase or lowercase
@@ -45,14 +46,19 @@ console.log(results);
 // console.log(string);
 
 //refactor solution two 
-let str = {};
-const countStr = (str) =>{
-    let result = [...str];
-    let regex = /[\w\s]+/;
-    regex.test(result) ?  result : 'Write an alphanumeric string';
-    return result;
-}
+// let str = {};
+// const countStr = (str) =>{
+//     let result = [...str];
+//     let regex = /[\w\s]+/;
+//     regex.test(result) ?  result : 'Write an alphanumeric string';
+//     return result;
+// }
 
-let string = countStr('Hello heeeeyyy 56789 gooooood');
-console.log(string);
+// let string = countStr('Hello heeeeyyy 56789 gooooood');
+// console.log(string);
+
+//Problem solving patterns
+
+//Write a function called same, which accepts two arrays. The function should return the
+//array has it's corresponding value squared in the second array. The frequency of the values must be the same.
 
