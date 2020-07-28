@@ -60,21 +60,54 @@ console.log(results);
 //Problem solving patterns
 
 //question 3
-//Write a function called same, which accepts two arrays. The function should return the
-//array has it's corresponding value squared in the second array. The frequency of the values must be the same.
+//Write a function called same, which accepts two arrays . 
+//The function should return true if every value in the array has its corresponding value squared
+// in the second array. The frequency of the values should be the same.
 
-//solution one
-const same = (doublenums, newArray) =>{
-    let arr1 = doublenums;
-    let arr2 =  doublenums.map(doublenum => doublenum ** 2);
-    console.log(arr1, arr2);
+//solution one 
+// const same = (doublenums, newArray) =>{
+//     let arr1 = doublenums;
+//     let arr2 =  doublenums.map(doublenum => doublenum ** 2);
+//     console.log(arr1, arr2);
     
-    console.log(newArray);
-    if (JSON.stringify(newArray) === JSON.stringify(arr2)){
-        return true;
-    }else{
-        return false
+//     console.log(newArray);
+//     if (JSON.stringify(newArray) === JSON.stringify(arr2)){
+//         return true;
+//     }else{
+//         return false
+//     }
+// }
+// const result = same([1,2,1], [1 , 4, 1]);
+// console.log(result);
+
+//solution two
+//Make the output be same([1,2,1], [4, 4, 1]) true same([1,2,3], [1,9]) false
+function same(arr1, arr2) {
+    if(arr1.length !== arr2.length){
+        return false;
     }
+    let frequencyCounter1 = {}
+    let frequencyCounter2 = {}
+
+    for (let val of arr1){
+        frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+    }
+    for (let val of arr2){
+        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+    }
+
+    for (let key in frequencyCounter1){
+        if (!(key ** 2 in frequencyCounter2)){
+            return false;
+        }
+        if(frequencyCounter2[key **2] !== frequencyCounter1[key]){
+            return false;
+        }
+    }
+    console.log(frequencyCounter1);
+    console.log(frequencyCounter2);
+    return true;
 }
-const result = same([1,2,1], [1 , 4, 1]);
+
+const result = same([1,2,3,2], [9, 1, 4, 4]);
 console.log(result);
