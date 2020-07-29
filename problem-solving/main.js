@@ -82,30 +82,65 @@ console.log(results);
 
 //solution two
 //Make the output be same([1,2,1], [4, 4, 1]) true same([1,2,3], [1,9]) false
-function same(arr1, arr2) {
-    if(arr1.length !== arr2.length){
+// function same(arr1, arr2) {
+//     if(arr1.length !== arr2.length){
+//         return false;
+//     }
+//     let frequencyCounter1 = {};
+//     let frequencyCounter2 = {};
+
+//     for (let val of arr1){
+//         frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+//     }
+//     for (let val of arr2){
+//         frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+//     }
+
+//     for (let key in frequencyCounter1){
+//         if (!(key ** 2 in frequencyCounter2)){
+//             return false;
+//         }
+//         if(frequencyCounter2[key **2] !== frequencyCounter1[key]){
+//             return false;
+//         }
+//     }
+//     console.log(frequencyCounter1);
+//     console.log(frequencyCounter2);
+//     return true;
+// }
+
+// const result = same([1,2,3,2], [9, 1, 4, 4]);
+// console.log(result);
+
+const same = (arr1, arr2)  =>{
+    if (arr1.length !== arr2.length){
         return false;
     }
-    let frequencyCounter1 = {}
-    let frequencyCounter2 = {}
 
-    for (let val of arr1){
-        frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
-    }
-    for (let val of arr2){
-        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
-    }
+    let frequencyCounter1 = {};
+    let frequencyCounter2 = {};
 
-    for (let key in frequencyCounter1){
-        if (!(key ** 2 in frequencyCounter2)){
-            return false;
-        }
-        if(frequencyCounter2[key **2] !== frequencyCounter1[key]){
-            return false;
-        }
-    }
+    arr1.forEach( arr => {
+        frequencyCounter1[arr] = (frequencyCounter1[arr] || 0) +1;
+    })
+
+    arr2.forEach( arr => {
+        frequencyCounter2[arr] = (frequencyCounter2[arr] || 0) +1;
+    })
+
     console.log(frequencyCounter1);
     console.log(frequencyCounter2);
+
+    for(let key in frequencyCounter1){
+        let doubleKey = key ** 2;
+        doubleKey in frequencyCounter2 ? true : false;
+        frequencyCounter2[doubleKey] !== frequencyCounter1[key] ? true : false;
+    }
+         
+
+    console.log(frequencyCounter1);
+    console.log(frequencyCounter2);
+
     return true;
 }
 
