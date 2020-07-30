@@ -146,3 +146,52 @@ const same = (arr1, arr2)  =>{
 
 const result = same([1,2,3,2], [9, 1, 4, 4]);
 console.log(result);
+
+// Question two
+//Given two strings, write a function to determine if the second string is an anagram of the first string.
+//An anagram is a word, phrase , or name formed by rearranging the letters of another , such as cinema, formed from iceman.
+
+const stringInput = (str1, str2) =>{
+    if(str1.length !== str2.length){
+        return false;
+    }
+
+    let anagrams1 = [...str1];
+    let anagrams2 = [...str2];
+
+    
+
+     console.log(anagrams1, anagrams2)
+
+     anagrams1.forEach(anagram1 =>{
+         console.log(anagram1)
+        return anagram1;
+     })
+
+     anagrams2.forEach(anagram2 =>{
+         console.log(anagram2)
+        return anagram2;
+     })
+     console.log(anagrams1, anagrams2)
+     for (let str in anagrams1){
+         console.log(anagrams1[str])
+         //anagrams1[str] === anagrams2[str] ?  console.log('true'):console.log('false');
+         let text1 = anagrams1[str];
+         let text2 = anagrams2[str];
+         anagrams1 in anagrams2 ? 'true' : 'false';
+         anagrams1[str] !== anagrams2[str] ? console.log ('false'):console.log ('true');
+         //return true;
+     }
+    //  a !== b ? true : false;
+
+    // for(let str in anagram1){
+    //     anagram2[str] in anagram1[str] ? true : false;
+    //     anagram1[str] !== anagram2[str] ? true : false;
+    // }
+    //console.log(anagram1, anagram2)
+    return true;
+}
+
+//const strResult = stringInput ('anagram', 'nagaram');
+const strResult = stringInput ('rat', 'car');
+console.log(strResult);
