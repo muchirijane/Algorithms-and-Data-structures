@@ -59,28 +59,13 @@ console.log(results);
 
 //Problem solving patterns
 
-//question 3
+//question 1
 //Write a function called same, which accepts two arrays . 
 //The function should return true if every value in the array has its corresponding value squared
 // in the second array. The frequency of the values should be the same.
 
-//solution one 
-// const same = (doublenums, newArray) =>{
-//     let arr1 = doublenums;
-//     let arr2 =  doublenums.map(doublenum => doublenum ** 2);
-//     console.log(arr1, arr2);
-    
-//     console.log(newArray);
-//     if (JSON.stringify(newArray) === JSON.stringify(arr2)){
-//         return true;
-//     }else{
-//         return false
-//     }
-// }
-// const result = same([1,2,1], [1 , 4, 1]);
-// console.log(result);
 
-//solution two
+//solution 
 //Make the output be same([1,2,1], [4, 4, 1]) true same([1,2,3], [1,9]) false
 // function same(arr1, arr2) {
 //     if(arr1.length !== arr2.length){
@@ -112,86 +97,72 @@ console.log(results);
 // const result = same([1,2,3,2], [9, 1, 4, 4]);
 // console.log(result);
 
-const same = (arr1, arr2)  =>{
-    if (arr1.length !== arr2.length){
+// const same = (arr1, arr2)  =>{
+//     if (arr1.length !== arr2.length){
+//         return false;
+//     }
+
+//     let frequencyCounter1 = {};
+//     let frequencyCounter2 = {};
+
+//     arr1.forEach( arr => {
+//         frequencyCounter1[arr] = (frequencyCounter1[arr] || 0) +1;
+//     })
+
+//     arr2.forEach( arr => {
+//         frequencyCounter2[arr] = (frequencyCounter2[arr] || 0) +1;
+//     })
+
+//     console.log(frequencyCounter1);
+//     console.log(frequencyCounter2);
+
+//     for(let key in frequencyCounter1){
+//         let doubleKey = key ** 2;
+//         doubleKey in frequencyCounter2 ? true : false;
+//         frequencyCounter2[doubleKey] !== frequencyCounter1[key] ? true : false;
+//     }
+         
+
+//     console.log(frequencyCounter1);
+//     console.log(frequencyCounter2);
+
+//     return true;
+// }
+
+// const result = same([1,2,3,2], [9, 1, 4, 4]);
+// console.log(result);
+
+// // Question two
+// //Given two strings, write a function to determine if the second string is an anagram of the first string.
+// //An anagram is a word, phrase , or name formed by rearranging the letters of another , such as cinema, formed from iceman.
+
+function validAnagram(str1, str2) {
+    if (str1.length !== str2.length){
         return false;
     }
 
     let frequencyCounter1 = {};
     let frequencyCounter2 = {};
 
-    arr1.forEach( arr => {
-        frequencyCounter1[arr] = (frequencyCounter1[arr] || 0) +1;
-    })
 
-    arr2.forEach( arr => {
-        frequencyCounter2[arr] = (frequencyCounter2[arr] || 0) +1;
-    })
-
-    console.log(frequencyCounter1);
-    console.log(frequencyCounter2);
-
-    for(let key in frequencyCounter1){
-        let doubleKey = key ** 2;
-        doubleKey in frequencyCounter2 ? true : false;
-        frequencyCounter2[doubleKey] !== frequencyCounter1[key] ? true : false;
+    for (let str of str1){
+        frequencyCounter1[str] = (frequencyCounter1[str] || 0) +1;
     }
-         
+    for (let str of str2){
+        frequencyCounter2[str] = (frequencyCounter2[str] || 0) +1;
+    }
 
-    console.log(frequencyCounter1);
-    console.log(frequencyCounter2);
 
+    for (let key in frequencyCounter1){
+        if(frequencyCounter1[key] !== frequencyCounter2[key]){
+            return false;
+        }
+    }
+    console.log(frequencyCounter1, frequencyCounter2);
     return true;
 }
-
-const result = same([1,2,3,2], [9, 1, 4, 4]);
+// const result =validAnagram('texttwisttime', 'timetwisttext');
+//const result =validAnagram('car', 'rat');
+const result =validAnagram('aaz', 'zza');
 console.log(result);
 
-// Question two
-//Given two strings, write a function to determine if the second string is an anagram of the first string.
-//An anagram is a word, phrase , or name formed by rearranging the letters of another , such as cinema, formed from iceman.
-
-const stringInput = (str1, str2) =>{
-    if(str1.length !== str2.length){
-        return false;
-    }
-
-    let anagrams1 = [...str1];
-    let anagrams2 = [...str2];
-
-    
-
-     console.log(anagrams1, anagrams2)
-
-     anagrams1.forEach(anagram1 =>{
-         console.log(anagram1)
-        return anagram1;
-     })
-
-     anagrams2.forEach(anagram2 =>{
-         console.log(anagram2)
-        return anagram2;
-     })
-     console.log(anagrams1, anagrams2)
-     for (let str in anagrams1){
-         console.log(anagrams1[str])
-         //anagrams1[str] === anagrams2[str] ?  console.log('true'):console.log('false');
-         let text1 = anagrams1[str];
-         let text2 = anagrams2[str];
-         anagrams1 in anagrams2 ? 'true' : 'false';
-         anagrams1[str] !== anagrams2[str] ? console.log ('false'):console.log ('true');
-         //return true;
-     }
-    //  a !== b ? true : false;
-
-    // for(let str in anagram1){
-    //     anagram2[str] in anagram1[str] ? true : false;
-    //     anagram1[str] !== anagram2[str] ? true : false;
-    // }
-    //console.log(anagram1, anagram2)
-    return true;
-}
-
-//const strResult = stringInput ('anagram', 'nagaram');
-const strResult = stringInput ('rat', 'car');
-console.log(strResult);
