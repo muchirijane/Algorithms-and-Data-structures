@@ -171,6 +171,7 @@ console.log(results);
 Write a function called sumZero which accepts sorted array of integers. The function should find the first pair 
 that sums up to 0. Return a array that inludes both values that sums to zero or undefined if the pair does not exist.
 sumZero([-3,-2,-1,1,2,3]) -3,3 
+sumZero([-1,1,3,2,4,0,-3,-2,-4]); -4,4
 sumZero([-2,0,1,3]) undefined
 sumZero([1,2,3]) undefined
 time complexity = 0(n)
@@ -199,8 +200,9 @@ const sumZero = (arrs) =>{
 //const res1 = sumZero([-3,-2,-1,0,1,2,3]);
 //const res2 = sumZero([-3,-2,-1,0,3,2,1]);
 const res3 = sumZero([-1,1,3,2,4,0,-3,-2,-4]);
+const res4 = sumZero([1,2,3,4]);
 
-console.log(res3);
+console.log(res4);
 */
 
 /* 
@@ -252,3 +254,50 @@ const res3 = countUniqueValues([])
 const res4 = countUniqueValues([-2,-1,-1,0,1]) //4
 console.log(res1);
 */
+
+/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////*******************  Sliding window  ********************************/
+/**
+ * What is a sliding window
+ This pattern involves creating a window which can either be  an array or a number from one position to other.
+ Depending on a certain condition, the window can either increases or closes (and a new window will be created)
+ It's very useful when keeping track of a subset of an array.
+*/
+
+/*
+Write a function called maxSubarraySum which accepts an array of integers and a number of n. The sum should 
+calculate the maximum sum of n consecutive elements in an array.
+Time complexity = 0(n)
+maxSubarraySum([1,2,5,2,8,1,5], 2) //10
+maxSubarraySum([1,2,5,2,8,1,5], 4) //17
+maxSubarraySum([4,2,1,6], 1) //6
+maxSubarraySum([4,2,1,6,2], 4) //13
+maxSubarraySum([], 4) //null
+*/
+/*
+function maxSubarraySum (arr, num){
+    let currentSum = 0;
+    let nextSum = 0;
+    if(num > arr.length) return null
+
+    for(let i = 0; i < num; i++){
+       currentSum += arr[i];
+       //console.log(currentSum);
+    }
+    for(let i = num; i < arr.length; i++){
+        nextSum = currentSum - arr[i - num] + arr[i];
+        console.log(currentSum);
+        console.log(arr[i - num]);
+        console.log(arr[i]);
+        console.log(nextSum);
+        currentSum = Math.max(currentSum, nextSum);
+        console.log(currentSum);
+    }
+    return currentSum;
+}
+
+//const res1 = maxSubarraySum([1,2,5,2,8,1,5], 4) //17
+const res2 = maxSubarraySum([1,2,5,2,8,1,5], 2) //10
+console.log(res2);
+*/
+
