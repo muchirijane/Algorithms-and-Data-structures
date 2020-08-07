@@ -301,3 +301,52 @@ const res2 = maxSubarraySum([1,2,5,2,8,1,5], 2) //10
 console.log(res2);
 */
 
+/**
+ * Divide and conquer
+ * This patterns involves diving a data set into smaller chunks and then reapting a process with a subset of data.
+ * This pattern can decrease time complexity
+ */
+
+
+ 
+ // *****************Problem pattern Challenges *****************************/
+ /////////////////////// Question one /////////////////////////////////////////////////////
+ /*
+ Write a function called sameFrequency. Given two positive integers, find out if two intergers have the same frequency of digits.
+ Your solution must have the following🧮 
+ Time complexity = 0(n)
+ sameFrequency(182,281); //true
+ sameFrequency(34,14); //false
+ sameFrequency(3589578, 5879385); //true
+ sameFrequency(22,222); //false
+ */
+
+function sameFrequency(num1,num2){
+    // good luck. Add any arguments you deem necessary.
+    let numStr1 = num1.toString();
+    let numStr2 = num2.toString();
+    if(numStr1.length !== numStr2.length) return false;
+
+    let countNum1 = {};
+    let countNum2 = {};
+
+    for(let i = 0; i < numStr1.length; i++){
+        countNum1[numStr1[i]] =  (countNum1[numStr1[i]] || 0)+ 1;
+    }
+    for(let i = 0; i < numStr2.length; i++){
+        countNum2[numStr2[i]] =  (countNum2[numStr2[i]] || 0)+ 1;
+    }
+    console.log(countNum1, countNum2);
+
+    for(let key in countNum1){
+        if(countNum1[key] !== countNum2[key]) return false;
+    }
+    return true;
+
+}
+  
+  const res1 = sameFrequency(182,281);
+  console.log(res1);
+
+
+
