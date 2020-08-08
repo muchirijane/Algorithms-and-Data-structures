@@ -308,7 +308,7 @@ console.log(res2);
  */
 
 
- 
+
  // *****************Problem pattern Challenges *****************************/
  /////////////////////// Question one /////////////////////////////////////////////////////
  /*
@@ -320,7 +320,7 @@ console.log(res2);
  sameFrequency(3589578, 5879385); //true
  sameFrequency(22,222); //false
  */
-
+/*
 function sameFrequency(num1,num2){
     // good luck. Add any arguments you deem necessary.
     let numStr1 = num1.toString();
@@ -347,6 +347,42 @@ function sameFrequency(num1,num2){
   
   const res1 = sameFrequency(182,281);
   console.log(res1);
+*/
 
+/**
+ * Implement a function called, areThereDublicates which accepts a variable number of arguments and checks whether there are
+ * any dublicates aming the arguments passed in. You can solve this using the frequency counter pattern or the multiple pointers pattern
+ * areThereDuplicates(1,2,3) //false
+ * areThereDuplicates(1,2,2) //true
+ * areThereDuplicates('a', 'b', 'c', 'a') //true
+ * I used mutple pointers but you can use sets also.
+ */  
 
+// const areThereDuplicates = (...str) => {
+//     str.sort((a,b)=> a > b);
+//     str.toString();
+//     console.log(str);
+//     let first = 0;
+//     let second = 1;
 
+//     while(first < str.length){
+//         if(str[first] === str[second]){
+//             return true;
+//         }
+//         first ++;
+//         second ++;
+//     }
+//     return false;
+// }
+
+// const res1 = areThereDuplicates(1,2,3) //true
+// const res2 = areThereDuplicates('a', 'b', 'c', 'a') //true
+// console.log(res2);
+
+const areThereDuplicates = (...arr) =>{
+    return new Set(arr).size !== arr.length;
+}
+
+const res1 = areThereDuplicates(1,2,2); //true
+const res2 = areThereDuplicates('a', 'b', 'c', 'a'); //true
+console.log(res2);
