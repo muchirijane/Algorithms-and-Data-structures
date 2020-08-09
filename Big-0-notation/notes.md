@@ -20,7 +20,7 @@ As the input of a function increases the runtime doesn't change it remains const
 #### Smaller terms does not matter.
 #### O(n + 10) =>  O(n)
 #### O(1000n + 50) => O(n)
-#### O(n2 + 5n + 6) => O(n * n)/ O(n2)
+#### O(n^2 + 5n + 6) => O(n * n)/ O(n2)
 #### O(n^2 + n^3) => O(n^3) 
 
 ### Important to note
