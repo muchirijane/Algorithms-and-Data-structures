@@ -14,13 +14,13 @@ As the input of a function increases the runtime also increases
 #### f(n) - quadrantic = ( f(n) = n ^ 2 )
 As the input of a function increases the runtime squares as the input squares.
 #### f(n) - constant ( f(n) = 1 )
-As the input of a function increases the runtime does change it remains constant.
+As the input of a function increases the runtime doesn't change it remains constant.
 #### f(n) - could be something different.
 
 #### Smaller terms does not matter.
 #### O(n + 10) =>  O(n)
-#### O(1000 + 50) => O(n)
-#### O(n2 + 5n + 6) => O(n * n)/ O(n2)
+#### O(1000n + 50) => O(n)
+#### O(n^2 + 5n + 6) => O(n * n)/ O(n2)
 #### O(n^2 + n^3) => O(n^3) 
 
 ### Important to note
