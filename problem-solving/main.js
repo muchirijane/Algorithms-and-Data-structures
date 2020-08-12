@@ -472,4 +472,41 @@ averagePair([], 4) //false
 // console.log(res3);
 
 ///////////////////////////////////////////////////////////////////////////////////
-//////****************************   Sliding window *************/
+//////****************************   Sliding window ******* question 5******/
+/**
+ * Given an array of intergers and a number , write a function called maxSubarraySum , 
+ * which finds the maximum sum of a subarray witj the length of the number passsed on the function. 
+ * Note that a subarray must consist of consecutive elements from the original array. In the first example below, [100,200,300] is a subarray of the
+ * original array, but [100,200,300] is not. 
+ * constraints 
+ * Time -  0(n)
+ * Space - 0(1)
+ * 
+ * maxSubarraySum ([100,200,300,400], 2); //700
+ * maxSubarraySum ([1,4,2,10,23,3,1,0,20], 4); //39
+ * maxSubarraySum ([-3,4,0,-2.6,-1], 2); //5
+ * maxSubarraySum ([2,3], 3); //null
+ */
+//solution 1
+ const maxSubarraySum = (arr, num)=>{
+     if(num > arr.length) return null;
+
+     let currentSum = 0;
+     let nextSum = 0;
+
+     for (let i = 0; i < num; i++) {
+         currentSum += arr[i];
+     }
+     for( let i = num; i < arr.length; i++){
+         nextSum = currentSum - arr[i-num] + arr[i];
+         console.log(currentSum);
+         console.log(nextSum);
+        
+         currentSum = Math.max(nextSum, currentSum);
+         
+     }
+     return currentSum;
+}
+const res1 = maxSubarraySum ([100,200,300,400], 2); //700
+const res2 = maxSubarraySum ([1,4,2,10,23,3,1,0,20], 4); //39
+console.log(res2);
