@@ -434,3 +434,42 @@ averagePair([], 4) //false
 // const res4 = averagePair([1,3,3,5,6,7,10,12,19], 8); //true
 // console.log(res4);
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+/********************************* Question 4 **********************************/
+/**
+ * Write a function called isSubsequence which takes two strings and checks whether the characters of the first string form a 
+ * subsequence of the characters of the second string. In others words, the function should check whether the characters of the first string
+ * apper in the second string without their order changing.
+ * Constraints :
+ * Time - O(N + M)
+ * space - O(1)
+ * Examples
+ * isSubsequence('hello', 'hello world'); //true
+ * isSubsequence('sing', 'sting'); //true
+ * isSubsequence('abc', 'abracadara'); //true
+ * isSubsequence('abc', 'acb'); //false order matters
+ */
+
+ //SOLUTION
+// const isSubsequence = (str1, str2) => {
+//     if(str1.length < str2.length) return true;
+//     var first = 0;
+//     var second = 0;
+//     if (!str1) return true;
+//     while (second < str2.length) {
+//         if (str2[second] === str1[first]) first++;
+//         if (str1.length === second) return true;
+//         second++;
+//     }
+//     return false;
+// }
+
+// //const res1 = isSubsequence('hello', 'hello world'); //true
+// //const res2 = isSubsequence('sing', 'sting'); //true
+// const res3 = isSubsequence('abc', 'abracadara'); //true
+// //const res4 = isSubsequence('abc', 'acb'); //false order matters
+// const res5 = isSubsequence('abcabc', 'acb'); //false order matters
+// console.log(res3);
+
+///////////////////////////////////////////////////////////////////////////////////
+//////****************************   Sliding window *************/
