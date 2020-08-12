@@ -349,6 +349,8 @@ function sameFrequency(num1,num2){
   console.log(res1);
 */
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/***************************************** Question 2  *****************/
 /**
  * Implement a function called, areThereDublicates which accepts a variable number of arguments and checks whether there are
  * any dublicates aming the arguments passed in. You can solve this using the frequency counter pattern or the multiple pointers pattern
@@ -379,10 +381,56 @@ function sameFrequency(num1,num2){
 // const res2 = areThereDuplicates('a', 'b', 'c', 'a') //true
 // console.log(res2);
 
-const areThereDuplicates = (...arr) =>{
-    return new Set(arr).size !== arr.length;
-}
+//solution 2
 
-const res1 = areThereDuplicates(1,2,2); //true
-const res2 = areThereDuplicates('a', 'b', 'c', 'a'); //true
-console.log(res2);
+// const areThereDuplicates = (...arr) =>{
+//     return new Set(arr).size !== arr.length;
+// }
+
+// const res1 = areThereDuplicates(1,2,2); //true
+// const res2 = areThereDuplicates('a', 'b', 'c', 'a'); //true
+// console.log(res2);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+////************************************  Multiple pointer Question 3 **************************** */
+/*
+*Multiple Pointers - average pairs
+Write a function called averagePair. Given a sorted array of intergers and a target average, determine if there is a pair of values 
+where the average of the pairs is equals to the target average. There maybe more than one pair that matches the average target.
+Contrainsts: 
+Time: O(n)
+Space: O(1)
+Sample output
+averagePair([1,2,3], 2.5) //true
+averagePair([1,3,3,5,6,7,12,19], 8) //true
+averagePair([-1,0,3,4,5,6], 4.1) //false
+averagePair([], 4) //false
+ */
+
+//SOLUTION
+// const averagePair = (arr, average)=>{
+//     arr.sort((a,b)=> a > b);
+//     if(average > arr.length) return false;
+
+//     let left = 0;
+//     let right = arr.length-1;
+
+//     while(left < right){
+//       let totalAverage = (arr[left] + arr[right])/2;
+//       if(totalAverage === average){
+//           return true;
+//       }else if(totalAverage < average){
+//           left++;
+//       }else{
+//           right--;
+//       }
+//     }
+//     return false;
+// };
+
+//const res1 = averagePair([], 4) //false
+//const res2 = averagePair([-1,0,3,4,5,6], 4.1) //false
+//const res3 = averagePair([1,2,3], 2.5) //true
+// const res4 = averagePair([1,3,3,5,6,7,10,12,19], 8); //true
+// console.log(res4);
+
