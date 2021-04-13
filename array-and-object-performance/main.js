@@ -47,3 +47,22 @@ let names = ["jane", "bob", "kyle", "jude", "monicah", "ross"]
 const result = planets.splice(2,4 ,'mars')
 console.log(planets, result);
 
+const users = [
+    {name: 'Jane', isPremium: true},
+    {name: 'John', isPremium: false},
+    {name: 'kyle', isPremium: true},
+    {name: 'Jude' , isPremium: true},
+    {name: 'Liam' , isPremium: false}
+];
+
+const onlyPremiumUsers = users.filter(user => user.isPremium);
+
+console.log(onlyPremiumUsers);
+
+const resultNow = users.forEach(user => {
+    if(user.isPremium === true) {
+        console.log(user);
+    }
+})
+
+console.log(resultNow);

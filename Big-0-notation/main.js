@@ -78,6 +78,8 @@ printAllPairs(10);
 
 // numbers(3);
 
+
+
 const numbers = (n) => {
     for(let i = 1; i <= Math.min(n, 5); i++){
         console.log(i);
@@ -133,6 +135,7 @@ function subtotals(array) {
 
     //O(n^2)
 }
+console.log(subtotals[1,2,3,4,5,6]);
 // Auxiliary space complexity
 
 const sumArr = (arr) => {
@@ -204,6 +207,7 @@ function subtotals(array) {
     //O(n)
 }
 
+
 const printAllPairs = (n)=> {
     for (var i = 0; i < n; i++) {
       for (var j = 0; j < n; j++) {
@@ -212,4 +216,10 @@ const printAllPairs = (n)=> {
     }
 }
 
-printAllPairs(10);
+printAllPairs(2);
+
+
+
+
+
+
